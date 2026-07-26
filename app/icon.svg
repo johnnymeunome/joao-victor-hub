@@ -1,5 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="15" fill="#151515"/>
-  <path d="M17 18v18c0 8 4 12 11 12 6 0 10-4 10-11V18h-7v19c0 3-1 5-4 5s-4-2-4-6V18h-6Z" fill="#F2F0E9"/>
-  <circle cx="47" cy="44" r="4" fill="#FF5C35"/>
+  <defs>
+    <radialGradient id="shell" cx="48%" cy="42%" r="58%">
+      <stop offset="0" stop-color="#626773"/>
+      <stop offset=".42" stop-color="#17191e"/>
+      <stop offset=".72" stop-color="#050506"/>
+      <stop offset="1"/>
+    </radialGradient>
+    <radialGradient id="lens" cx="50%" cy="48%" r="52%">
+      <stop offset="0" stop-color="#fff7b0"/>
+      <stop offset=".08" stop-color="#ffd52c"/>
+      <stop offset=".16" stop-color="#ff5a37"/>
+      <stop offset=".38" stop-color="#e00027"/>
+      <stop offset=".7" stop-color="#61000f"/>
+      <stop offset="1" stop-color="#090002"/>
+    </radialGradient>
+    <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="64" height="64" rx="15" fill="#030303"/>
+  <circle cx="32" cy="32" r="23.5" fill="url(#shell)" stroke="#777d89" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="19.5" fill="#020204" stroke="#27303b" stroke-width="2"/>
+  <circle cx="32" cy="32" r="15" fill="#120006" stroke="#52000e" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="11" fill="#e0002a" opacity=".5" filter="url(#glow)"/>
+  <circle cx="32" cy="32" r="11.5" fill="url(#lens)"/>
+  <ellipse cx="28" cy="27" rx="5.5" ry="3" fill="#ff7e8e" opacity=".27" transform="rotate(-25 28 27)"/>
+  <circle cx="32" cy="32" r="2.6" fill="#fff8b5"/>
+  <circle cx="31.2" cy="31.2" r="1.1" fill="#fff"/>
 </svg>
