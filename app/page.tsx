@@ -4,30 +4,36 @@ import { ExternalArrow } from "@/components/external-arrow";
 import { ProjectCard } from "@/components/project-card";
 import { projects, site } from "@/content/site";
 
-const openSourceIdeas = [
+const openSourceProjects = [
   {
     number: "01",
-    name: "palette-pocket",
-    description: "Uma ferramenta pequena para transformar referências visuais em paletas prontas para interfaces acessíveis.",
-    flow: ["imagem", "contraste", "tokens CSS"],
-    features: ["Extração automática", "Teste WCAG", "Exportação em CSS e JSON"],
-    stack: "TypeScript · CLI",
+    name: "MyVault",
+    status: "M0 · product shell",
+    kind: "Desktop · local-first",
+    description:
+      "Um gerenciador de credenciais que começa pela experiência e pela arquitetura: interface desktop completa, dados apenas em memória e um caminho explícito para um núcleo seguro em Rust.",
+    image: "/images/code/myvault-dashboard.png",
+    alt: "Dashboard final do MyVault com lista de credenciais, detalhes, gerador de senhas e indicadores de integridade",
+    url: "https://github.com/johnnymeunome/MyVault",
+    stack: ["Tauri 2", "React 19", "TypeScript", "Rust", "Zustand"],
+    facts: ["Interface navegável", "CI e testes públicos", "Arquitetura KDBX planejada"],
+    note: "Protótipo M0 — ainda não deve armazenar credenciais reais.",
+    featured: true,
   },
   {
     number: "02",
-    name: "alt-check",
-    description: "Uma extensão direta ao ponto para encontrar imagens inacessíveis antes que um site seja publicado.",
-    flow: ["página", "auditoria", "relatório"],
-    features: ["Varredura local", "Sugestões de descrição", "Relatório compartilhável"],
-    stack: "JavaScript · Browser extension",
-  },
-  {
-    number: "03",
-    name: "brief-to-readme",
-    description: "Um gerador que transforma um briefing curto em documentação inicial clara, humana e útil.",
-    flow: ["briefing", "estrutura", "README"],
-    features: ["Perguntas guiadas", "Templates editáveis", "Markdown limpo"],
-    stack: "TypeScript · Local first",
+    name: "Mail Link Defender",
+    status: "v0.2.3 · release",
+    kind: "Chrome extension · segurança",
+    description:
+      "Uma extensão que analisa links localmente no Gmail, explica sinais de phishing e interrompe cliques de alto risco antes da navegação.",
+    image: "/images/code/mail-link-defender.png",
+    alt: "Tela vermelha do Mail Link Defender interrompendo a abertura de um link perigoso",
+    url: "https://github.com/johnnymeunome/mail-link-defender",
+    stack: ["Manifest V3", "TypeScript", "Vite", "Vitest"],
+    facts: ["42 testes automatizados", "Análise 100% local", "Release instalável"],
+    note: "Detecção explicável por regras — sem enviar URLs ou e-mails para servidores.",
+    featured: false,
   },
 ];
 
@@ -127,12 +133,12 @@ export default function Home() {
               <span>[ produto · design · código ] <ExternalArrow /></span>
             </a>
             <div className="readme-badges" aria-label="Informações rápidas"><span>pt-BR</span><span>Rio de Janeiro</span><span>design × code</span></div>
-            <div className="profile__note"><span>agora</span> construindo a ponte entre design e open source <time dateTime={site.updatedAt}>· atualizado {site.updatedLabel}</time></div>
+            <div className="profile__note"><span>agora</span> dois produtos open source publicados <time dateTime={site.updatedAt}>· atualizado {site.updatedLabel}</time></div>
             <div className="readme-snippet" aria-label="Resumo do workspace em formato de código">
               <ol>
                 <li><code><b>const</b> workspace = &#123;</code></li>
                 <li><code>design: <em>&quot;publicado&quot;</em>,</code></li>
-                <li><code>code: <em>&quot;em construção&quot;</em>,</code></li>
+                <li><code>code: <em>&quot;publicado&quot;</em>,</code></li>
                 <li><code>mode: <em>&quot;aprender em público&quot;</em></code></li>
                 <li><code>&#125;;</code></li>
               </ol>
@@ -159,28 +165,46 @@ export default function Home() {
 
           <section className="code-section" id="codigo" aria-labelledby="code-title">
             <div className="code-heading">
-              <p className="code-kicker">Roadmap público · três ideias para começar</p>
-              <h2 id="code-title">Pequenas ideias.<br />Código aberto.</h2>
-              <p>Projetos fictícios por enquanto, mas pensados como produtos reais: um problema claro, uma entrega pequena e espaço para outras pessoas contribuírem.</p>
+              <p className="code-kicker">Repositórios públicos · produto e engenharia</p>
+              <h2 id="code-title">Ideias que<br />saíram do papel.</h2>
+              <p>Dois produtos construídos em público, com decisões documentadas, limites honestos e espaço real para evolução.</p>
             </div>
 
-            <div className="idea-grid">
-              {openSourceIdeas.map((idea, index) => (
-                <article className={`idea-card${index === 0 ? " idea-card--featured" : ""}`} key={idea.name}>
-                  <div className="idea-card__top"><span>projeto {idea.number}</span><span className="visibility">conceito</span></div>
-                  <h3>{idea.name}</h3>
-                  <p className="idea-card__description">{idea.description}</p>
-                  <div className="idea-card__flow" aria-label="Fluxo do produto">
-                    {idea.flow.map((step, stepIndex) => <span key={step}>{step}{stepIndex < idea.flow.length - 1 && <b aria-hidden="true">→</b>}</span>)}
+            <div className="code-projects">
+              {openSourceProjects.map((project) => (
+                <article className={`code-project${project.featured ? " code-project--featured" : ""}`} key={project.name}>
+                  <div className="code-project__filebar">
+                    <span><i aria-hidden="true">└─</i> projects/{project.name.toLowerCase().replaceAll(" ", "-")}</span>
+                    <span>{project.status}</span>
                   </div>
-                  <ul>{idea.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
-                  <div className="idea-card__meta"><span>{idea.stack}</span><span>repositório em breve</span></div>
+                  <a className="code-project__media" href={project.url} rel="noreferrer" target="_blank">
+                    <Image alt={project.alt} fill sizes={project.featured ? "(min-width: 976px) 880px, 100vw" : "(min-width: 640px) 50vw, 100vw"} src={project.image} />
+                    <span className="code-project__media-label">preview / final-ui.png</span>
+                  </a>
+                  <div className="code-project__body">
+                    <div className="code-project__identity">
+                      <p>{project.number} · {project.kind}</p>
+                      <h3>{project.name}</h3>
+                      <span className="code-project__status"><i aria-hidden="true" />{project.status}</span>
+                    </div>
+                    <div className="code-project__content">
+                      <p>{project.description}</p>
+                      <div className="code-project__stack" aria-label={`Tecnologias do ${project.name}`}>
+                        {project.stack.map((item) => <span key={item}>{item}</span>)}
+                      </div>
+                      <ul>{project.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
+                      <small>{project.note}</small>
+                    </div>
+                    <a className="code-project__link" href={project.url} rel="noreferrer" target="_blank">
+                      <span>abrir repositório</span><ExternalArrow />
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
 
             <a className="code-profile-link" href={site.githubUrl} rel="noreferrer" target="_blank">
-              <span><strong>johnnymeunome</strong><small>acompanhe quando o primeiro projeto sair</small></span>
+              <span><strong>johnnymeunome</strong><small>código, releases e próximos experimentos</small></span>
               <ExternalArrow />
             </a>
           </section>

@@ -17,6 +17,6 @@ A home funciona como um workspace pessoal: perfil primeiro, design como conteúd
 - A seção de design abandona a sintaxe de código em favor de uma linguagem editorial.
 - Homefy abre a seleção em largura total.
 - Todo projeto de design direciona ao Behance.
-- A área de open source é uma visualização futura, identificada como conceito, com três ideias de projetos e métricas imaginadas.
+- A área de open source apresenta projetos reais; o MyVault recebe destaque editorial pelo dashboard e o Mail Link Defender aparece como produto funcional com release pública.
 - O link final aponta para `johnnymeunome`.
 - Sem contadores, troféus, badges decorativos ou widgets externos.

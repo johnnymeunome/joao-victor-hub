@@ -16,14 +16,14 @@
 
 Meu hub pessoal, construído como uma interface pública entre duas frentes: o design que já ganhou forma e o código que estou começando a colocar no mundo.
 
-O site não replica os cases internamente. Ele apresenta uma seleção visual e direciona cada projeto para sua página completa no Behance. A área open source funciona como roadmap público e permanece identificada como conceitual até os primeiros repositórios serem publicados.
+O site não replica os cases de design internamente. Ele apresenta uma seleção visual e direciona cada projeto para sua página completa no Behance. A área open source apresenta produtos públicos reais, com previews, contexto técnico e links diretos para os repositórios.
 
 ## Arquivo
 
 - Perfil pessoal em formato de README
 - Seis cases selecionados do Behance
 - Slideshows locais com imagens dos projetos
-- Três conceitos iniciais de produtos open source
+- MyVault e Mail Link Defender como projetos open source em destaque
 - Hub de redes e contato profissional
 - Open Graph próprio, sitemap, dados estruturados e página 404
 - Experiência mobile-first com movimento reduzido e navegação por teclado

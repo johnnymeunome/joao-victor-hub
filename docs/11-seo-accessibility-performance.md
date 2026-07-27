@@ -13,7 +13,7 @@ Preparar o hub para ser encontrado, compartilhado e usado com confiança sem aum
 - A URL canônica virá de `NEXT_PUBLIC_SITE_URL`, com suporte ao domínio de produção da Vercel e fallback local apenas para desenvolvimento.
 - O preview social será gerado pelo próprio Next.js a partir da identidade do site e da imagem humana/digital já existente.
 - Dados estruturados usarão `Person`, apenas com informações e perfis públicos confirmados.
-- Projetos open source continuarão explicitamente marcados como conceitos até existirem repositórios reais. Não serão criadas métricas, contribuições ou atividade fictícia.
+- Projetos open source usam apenas informações verificáveis nos repositórios públicos. Não serão criadas métricas, contribuições ou atividade fictícia.
 - Analytics permanece fora do escopo até existir uma pergunta de medição e uma decisão de privacidade.
 
 ## Checklist implementado
@@ -42,6 +42,6 @@ Sem essa variável, a Vercel usa automaticamente o domínio de produção do pro
 ## Pendências reais
 
 - fornecer um e-mail público, caso LinkedIn não deva permanecer como CTA;
-- publicar o primeiro repositório open source e substituir o primeiro conceito por evidência real;
+- manter estágio, releases, testes e limites de segurança sincronizados com os repositórios públicos;
 - validar a imagem social no LinkedIn Post Inspector e em um compartilhamento de WhatsApp após o domínio existir;
 - executar Lighthouse na URL publicada, porque métricas locais não representam rede, CDN e cache de produção.

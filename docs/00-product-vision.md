@@ -20,7 +20,7 @@ O primeiro lançamento será um **hub de links com estética e narrativa de webs
 - O Behance representa a melhor prova visual disponível hoje.
 - Os projetos de design serão apresentados por previews curtos e links externos diretos.
 - O GitHub será um pilar de destaque e crescerá junto com novos projetos open source.
-- Enquanto não houver repositórios públicos, o site comunicará esse estágio com transparência, sem inventar atividade.
+- Os repositórios públicos serão apresentados com o estágio real de maturidade, sem inflar métricas ou promessas de segurança.
 - Detalhes extensos, estudos de caso internos e métricas de projeto ficam para uma evolução posterior.
 
 ## 2. Problema
@@ -222,7 +222,7 @@ O primeiro lançamento deverá considerar:
 - home organizada em cinco blocos perceptíveis: identidade, trabalho selecionado, evidências, presença e conversão;
 - hero conciso com identidade, posicionamento e ações principais;
 - previews curtos dos projetos de design, todos direcionando para o Behance;
-- destaque editorial para o GitHub e para a construção futura de projetos open source;
+- destaque editorial para o GitHub, o MyVault e o Mail Link Defender;
 - modelo de conteúdo tipado e separado da apresentação;
 - evidências técnicas e visuais selecionadas manualmente, com links externos;
 - presença profissional contextualizada, sem lista uniforme de botões;
