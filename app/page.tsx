@@ -19,6 +19,7 @@ const openSourceProjects = [
     facts: ["Interface navegável", "CI e testes públicos", "Arquitetura KDBX planejada"],
     note: "Protótipo M0 — ainda não deve armazenar credenciais reais.",
     featured: true,
+    portraitPreview: false,
   },
   {
     number: "02",
@@ -27,13 +28,14 @@ const openSourceProjects = [
     kind: "Chrome extension · segurança",
     description:
       "Uma extensão que analisa links localmente no Gmail, explica sinais de phishing e interrompe cliques de alto risco antes da navegação.",
-    image: "/images/code/mail-link-defender.png",
-    alt: "Tela vermelha do Mail Link Defender interrompendo a abertura de um link perigoso",
+    image: "/images/code/mail-link-defender-popup.png",
+    alt: "Popup do Mail Link Defender no Chrome com proteção do Gmail ativa e análise local de links",
     url: "https://github.com/johnnymeunome/mail-link-defender",
     stack: ["Manifest V3", "TypeScript", "Vite", "Vitest"],
     facts: ["42 testes automatizados", "Análise 100% local", "Release instalável"],
     note: "Detecção explicável por regras — sem enviar URLs ou e-mails para servidores.",
     featured: false,
+    portraitPreview: true,
   },
 ];
 
@@ -172,7 +174,7 @@ export default function Home() {
 
             <div className="code-projects">
               {openSourceProjects.map((project) => (
-                <article className={`code-project${project.featured ? " code-project--featured" : ""}`} key={project.name}>
+                <article className={`code-project${project.featured ? " code-project--featured" : ""}${project.portraitPreview ? " code-project--portrait" : ""}`} key={project.name}>
                   <div className="code-project__filebar">
                     <span><i aria-hidden="true">└─</i> projects/{project.name.toLowerCase().replaceAll(" ", "-")}</span>
                     <span>{project.status}</span>

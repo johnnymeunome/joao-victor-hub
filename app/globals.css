@@ -144,6 +144,8 @@ blockquote { margin: 1.5rem 0; padding: .15rem 0 .15rem 1rem; border-left: .25re
 .code-project__media { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--line); background: #050505; }
 .code-project__media img { object-fit: cover; transition: transform 420ms ease; }
 .code-project--featured .code-project__media { aspect-ratio: 16 / 10; }
+.code-project--portrait .code-project__media { aspect-ratio: 1 / 1; background: #202020; }
+.code-project--portrait .code-project__media img { object-position: center center; transform: scale(1.5); transform-origin: 84% 48%; }
 .code-project__media-label { position: absolute; right: .65rem; bottom: .65rem; padding: .35rem .48rem; border: 1px solid rgba(255, 255, 255, .18); border-radius: .2rem; background: rgba(0, 0, 0, .78); color: #d7d7d7; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .5rem; backdrop-filter: blur(6px); }
 .code-project__body { display: grid; gap: 1.25rem; padding: 1rem; }
 .code-project__identity > p { margin: 0 0 .55rem; color: #777; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .52rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
@@ -240,6 +242,7 @@ blockquote { margin: 1.5rem 0; padding: .15rem 0 .15rem 1rem; border-left: .25re
   .project-card__stamp:hover { background: white; transform: rotate(-2deg) scale(1.04); }
   .profile-socials > a:hover, .code-project:hover { border-color: #969696; transform: translateY(-2px); }
   .code-project__media:hover img { transform: scale(1.015); }
+  .code-project--portrait .code-project__media:hover img { transform: scale(1.54); }
   .code-project__link:hover { border-color: #8b8b8b; }
   .profile-contact:hover { border-color: #888; background: #111; transform: translateY(-2px); }
   .site-footer__icon-grid > a:hover { opacity: .65; transform: scale(1.12); }
